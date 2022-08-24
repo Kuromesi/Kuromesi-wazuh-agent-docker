@@ -4,8 +4,8 @@ LABEL maintainer "Kuromesi"
 LABEL version "1.0"
 LABEL description "Wazuh Agent"
 
-COPY entrypoint.sh ossec.conf /
-
+COPY entrypoint.sh /
+RUN ["chmod", "+x", "/entrypoint.sh"]
 RUN apt-get update && apt-get install -y \
   procps curl apt-transport-https gnupg2&& \
   curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | apt-key add - && \
