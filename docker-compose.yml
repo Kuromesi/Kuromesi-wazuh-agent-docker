@@ -97,18 +97,10 @@ services:
   wazuh.agent:
     image: kuromesi/wazuh-agent
     restart: always
-    environment:
-      - JOIN_MANAGER=10.147.1.0
-      - JOIN_GROUPS=default
-      - JOIN_PASSWORD=MyS3cr37P450r.*-
     depends_on:
       - wazuh.manager
     networks:
       - mynetwork
-    volumes:
-      - /etc/os-release:/etc/os-release
-      - /var/run/docker.sock:/var/run/docker.sock
-      - /:/rootfs:ro
 
 volumes:
   wazuh_api_configuration:

@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:focal
 
 LABEL maintainer "Kuromesi"
 LABEL version "1.0"
